@@ -321,27 +321,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
                 return true;
-//            case R.id.switch_themes:
-//                if(mTheme == R.style.CustomStyle_DarkTheme){
-//                    addThemeToSharedPreferences(LIGHTTHEME);
-//                }
-//                else{
-//                    addThemeToSharedPreferences(DARKTHEME);
-//                }
-//
-////                if(mTheme == R.style.CustomStyle_DarkTheme){
-////                    mTheme = R.style.CustomStyle_LightTheme;
-////                }
-////                else{
-////                    mTheme = R.style.CustomStyle_DarkTheme;
-////                }
-//                this.recreate();
-//                return true;
-            case R.id.preferences:
-                Intent intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }

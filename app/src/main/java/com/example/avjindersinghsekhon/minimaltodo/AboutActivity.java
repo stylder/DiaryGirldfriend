@@ -58,8 +58,7 @@ public class AboutActivity extends AppCompatActivity {
         }
 
 
-        mVersionTextView = (TextView)findViewById(R.id.aboutVersionTextView);
-        mVersionTextView.setText(String.format(getResources().getString(R.string.app_version), appVersion));
+
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         contactMe = (TextView)findViewById(R.id.aboutContactMe);
 
