@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
@@ -95,10 +97,11 @@ public class ReminderActivity extends AppCompatActivity{
                 mToDoItems.remove(mItem);
                 changeOccurred();
                 saveData();
+                showMessage();
                 closeApp();
-//                finish();
             }
         });
+
 
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, snoozeOptionsArray);
@@ -111,6 +114,12 @@ public class ReminderActivity extends AppCompatActivity{
 
     }
 
+    private void showMessage(){
+        String [] arrayFrases =   getResources().getStringArray(R.array.frases);
+        int index = new Random().nextInt(arrayFrases.length);
+        Toast.makeText(getBaseContext(), arrayFrases[index],
+                Toast.LENGTH_LONG).show();
+    }
     private void closeApp(){
         Intent i = new Intent(ReminderActivity.this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
