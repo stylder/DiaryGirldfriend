@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -112,6 +113,18 @@ public class ReminderActivity extends AppCompatActivity{
         mSnoozeSpinner.setAdapter(adapter);
 //        mSnoozeSpinner.setSelection(0);
 
+    }
+
+    public void showToastMessage(String text, int duration){
+        final Toast toast = Toast.makeText(getBaseContext(), text, Toast.LENGTH_SHORT);
+        toast.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, duration);
     }
 
     private void showMessage(){
